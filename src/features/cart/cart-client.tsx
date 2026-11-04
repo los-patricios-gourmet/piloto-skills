@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Icon } from "@/components/icon";
 import { Country, formatPrice, getProduct, markets } from "@/data/markets";
 import { useCart } from "./cart-context";
 
@@ -18,13 +19,10 @@ export function CartClient({ country }: { country: Country }) {
     0,
   );
   return (
-    <main className="cart-page section-pad">
+    <main id="main-content" className="cart-page section-pad">
       <div className="page-heading">
-        <p className="eyebrow gold">
-          TU SELECCIÓN / {markets[country].name.toUpperCase()}
-        </p>
         <h1>
-          EL CARRITO<span>.</span>
+          Mi selección<span>.</span>
         </h1>
         <p>Revisa los ingredientes y sus presentaciones antes de continuar.</p>
       </div>
@@ -47,9 +45,6 @@ export function CartClient({ country }: { country: Country }) {
                   />
                 </Link>
                 <div className="cart-item-info">
-                  <span className="eyebrow gold">
-                    {product.category.toUpperCase()}
-                  </span>
                   <Link href={`/${country}/producto/${product.slug}`}>
                     {product.name}
                   </Link>
@@ -71,7 +66,7 @@ export function CartClient({ country }: { country: Country }) {
                         }
                         aria-label={`Disminuir ${product.name} ${variant.weight}`}
                       >
-                        −
+                        <Icon name="minus" />
                       </button>
                       <span>{line.quantity}</span>
                       <button
@@ -86,7 +81,7 @@ export function CartClient({ country }: { country: Country }) {
                         }
                         aria-label={`Aumentar ${product.name} ${variant.weight}`}
                       >
-                        +
+                        <Icon name="plus" />
                       </button>
                     </div>
                     <button
@@ -107,8 +102,7 @@ export function CartClient({ country }: { country: Country }) {
             ))}
           </div>
           <aside className="order-summary">
-            <p className="eyebrow gold">RESUMEN PILOTO</p>
-            <h2>TU PEDIDO</h2>
+            <h2>Resumen de muestra</h2>
             <div>
               <span>
                 Productos ({lines.reduce((n, l) => n + l.quantity, 0)})
@@ -128,18 +122,21 @@ export function CartClient({ country }: { country: Country }) {
               definirán antes del lanzamiento.
             </p>
             <Link href={`/${country}/checkout`} className="filled-action">
-              CONTINUAR A CHECKOUT <span>↗</span>
+              CONTINUAR A CHECKOUT{" "}
+              <span>
+                <Icon />
+              </span>
             </Link>
             <small>SIMULACIÓN · SIN PAGOS REALES</small>
           </aside>
         </div>
       ) : (
         <div className="empty-cart">
-          <span>◇</span>
-          <h2>TU CARRITO ESTÁ ESPERANDO.</h2>
+          <span></span>
+          <h2>Tu próxima selección</h2>
           <p>Elige una presentación de la colección para comenzar.</p>
           <Link href={`/${country}/catalogo`} className="filled-action">
-            EXPLORAR LA COLECCIÓN ↗
+            EXPLORAR LA COLECCIÓN <Icon />
           </Link>
         </div>
       )}

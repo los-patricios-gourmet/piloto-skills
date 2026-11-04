@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { Icon } from "@/components/icon";
 import { Country, categoryNames, Category, markets } from "@/data/markets";
 import { ProductCard } from "@/components/product-card";
 
@@ -22,7 +23,7 @@ export function CatalogClient({ country }: { country: Country }) {
     [products, category, query],
   );
   return (
-    <main className="catalog-page">
+    <main id="main-content" className="catalog-page">
       <section className="catalog-hero">
         <div className="catalog-hero-photo">
           <img
@@ -32,12 +33,7 @@ export function CatalogClient({ country }: { country: Country }) {
         </div>
         <div className="catalog-hero-shade" />
         <div className="catalog-hero-copy">
-          <p className="eyebrow gold">
-            LOS PATRICIOS GOURMET / {markets[country].name.toUpperCase()}
-          </p>
-          <h1>
-            LA <em>COLECCIÓN.</em>
-          </h1>
+          <h1>La colección</h1>
           <p>
             Ingredientes con carácter. Una selección piloto para explorar la
             experiencia de compra.
@@ -47,17 +43,19 @@ export function CatalogClient({ country }: { country: Country }) {
       <section className="catalog-content section-pad">
         <div className="catalog-head">
           <div>
-            <p className="eyebrow">DESCUBRE TU SELECCIÓN</p>
-            <h2>
-              ELIGE ALGO <em>EXCEPCIONAL.</em>
-            </h2>
+            <h2>Elige tu ingrediente</h2>
           </div>
-          <span>{filtered.length.toString().padStart(2, "0")} PRODUCTOS</span>
+          <span>{filtered.length} productos</span>
         </div>
         <div className="catalog-controls">
-          <div className="catalog-filters" aria-label="Filtrar por categoría">
+          <div
+            className="catalog-filters"
+            role="group"
+            aria-label="Filtrar por categoría"
+          >
             <button
               type="button"
+              aria-pressed={category === "todos"}
               className={category === "todos" ? "active" : ""}
               onClick={() => setCategory("todos")}
             >
@@ -67,6 +65,7 @@ export function CatalogClient({ country }: { country: Country }) {
               <button
                 type="button"
                 key={cat}
+                aria-pressed={category === cat}
                 className={category === cat ? "active" : ""}
                 onClick={() => setCategory(cat)}
               >
@@ -124,18 +123,17 @@ export function CatalogClient({ country }: { country: Country }) {
           />
         </div>
         <div className="story-copy">
-          <p className="eyebrow gold">TRADICIÓN · CALIDAD · EXCLUSIVIDAD</p>
           <h2>
-            EL VALOR DE
+            El valor de
             <br />
-            <em>ELEGIR BIEN.</em>
+            elegir bien
           </h2>
           <p>
             Una experiencia digital a la altura del ritual gastronómico:
             descubrir, conocer cada presentación y elegir con confianza.
           </p>
           <Link className="outline-action" href={`/${country}`}>
-            VOLVER AL INICIO ↗
+            VOLVER AL INICIO <Icon />
           </Link>
         </div>
       </section>

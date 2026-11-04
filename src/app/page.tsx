@@ -1,55 +1,65 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
-import { Reveal } from "@/components/reveal";
-
+import { Entrance } from "@/components/entrance";
+import { Icon } from "@/components/icon";
 export default function CountryEntry() {
   return (
     <main className="entry-page">
-      <div className="entry-photo">
-        <img
-          src="/images/caviar-piloto.png"
-          alt="Fotografía provisional de caviar"
-        />
-      </div>
-      <div className="entry-grain" />
-      <div className="entry-top">
+      <header className="entry-top">
         <BrandLogo light />
-        <span>UNA EXPERIENCIA GOURMET</span>
+        <span>Tradición. Calidad. Exclusividad.</span>
+      </header>
+      <div className="entry-layout">
+        <div className="entry-copy">
+          <Entrance>
+            <h1>
+              El gusto
+              <br />
+              de elegir
+            </h1>
+          </Entrance>
+          <Entrance delay={90}>
+            <p>
+              Los Patricios Gourmet. Ingredientes de excepción para tu mesa, en
+              Perú y Chile.
+            </p>
+          </Entrance>
+          <Entrance delay={150}>
+            <div className="entry-markets">
+              <Link href="/pe">
+                <span>
+                  Perú
+                  <Icon />
+                </span>
+                <small>Caviar y trufas · S/</small>
+              </Link>
+              <Link href="/cl">
+                <span>
+                  Chile
+                  <Icon />
+                </span>
+                <small>Caviar, trufas, Wagyu y foie gras · CLP</small>
+              </Link>
+            </div>
+          </Entrance>
+        </div>
+        <div className="entry-visual">
+          <img
+            src="/images/caviar-piloto.png"
+            alt="Caviar sobre piedra oscura, fotografía de muestra"
+            width="1672"
+            height="941"
+            fetchPriority="high"
+          />
+          <span>La excepción está en el ingrediente.</span>
+        </div>
       </div>
-      <div className="entry-content">
-        <Reveal>
-          <p className="eyebrow gold">TRADICIÓN · CALIDAD · EXCLUSIVIDAD</p>
-          <h1>
-            EL ARTE DE
-            <br />
-            <em>LO EXCEPCIONAL.</em>
-          </h1>
-          <p className="entry-description">
-            Una nueva forma de descubrir ingredientes únicos. Elige tu país para
-            explorar la colección.
-          </p>
-          <div className="entry-country-grid">
-            <Link href="/pe">
-              <span>01 / PERÚ</span>
-              <strong>
-                Perú <b>↗</b>
-              </strong>
-              <small>Caviar · Trufas</small>
-            </Link>
-            <Link href="/cl">
-              <span>02 / CHILE</span>
-              <strong>
-                Chile <b>↗</b>
-              </strong>
-              <small>Caviar · Trufas · Wagyu · Foie gras</small>
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-      <div className="entry-bottom">
-        <span>PILOTO VISUAL · IMÁGENES Y PRECIOS PROVISIONALES</span>
-        <Link href="/admin-demo">Explorar vista administrativa ↗</Link>
-      </div>
+      <footer className="entry-bottom">
+        <span>Piloto visual · imágenes y precios de muestra · sin cobros</span>
+        <Link href="/admin-demo">
+          Administración demo <Icon />
+        </Link>
+      </footer>
     </main>
   );
 }

@@ -51,19 +51,45 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const parsed: unknown = JSON.parse(
         localStorage.getItem(storageKey) || "[]",
       );
-      if (Array.isArray(parsed)) setLines(parsed.filter(validLine));
+      if (Array.isArray(parsed))
+        setLines(
+          parsed
+            .filter(validLine)
+            .map((line) => ({
+              ...line,
+              quantity: Math.min(
+                line.quantity,
+                getProduct(line.country, line.slug)!.variants.find(
+                  (v) => v.id === line.variantId,
+                )!.stock,
+              ),
+            }))
+            .filter((line) => line.quantity > 0),
+        );
     } catch {}
     setHydrated(true);
   }, []);
   useEffect(() => {
-    if (hydrated) localStorage.setItem(storageKey, JSON.stringify(lines));
+    if (hydrated) {
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(lines));
+      } catch {
+        /* The demo remains usable when browser storage is unavailable. */
+      }
+    }
   }, [lines, hydrated]);
   const value = useMemo<CartContextValue>(
     () => ({
       lines,
       add(country, slug, variantId, quantity = 1) {
+        const variant = getProduct(country, slug)?.variants.find(
+          (v) => v.id === variantId,
+        );
         if (
-          !getProduct(country, slug)?.variants.some((v) => v.id === variantId)
+          !variant ||
+          !Number.isInteger(quantity) ||
+          quantity <= 0 ||
+          variant.stock <= 0
         )
           return;
         setLines((current) => {
@@ -80,17 +106,29 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
                 line.variantId === variantId
                   ? {
                       ...line,
-                      quantity: Math.min(99, line.quantity + quantity),
+                      quantity: Math.min(
+                        variant.stock,
+                        line.quantity + quantity,
+                      ),
                     }
                   : line,
               )
             : [
                 ...current,
-                { country, slug, variantId, quantity: Math.min(99, quantity) },
+                {
+                  country,
+                  slug,
+                  variantId,
+                  quantity: Math.min(variant.stock, quantity),
+                },
               ];
         });
       },
       update(country, slug, variantId, quantity) {
+        const variant = getProduct(country, slug)?.variants.find(
+          (v) => v.id === variantId,
+        );
+        if (!variant || !Number.isInteger(quantity)) return;
         setLines((current) =>
           quantity <= 0
             ? current.filter(
@@ -105,7 +143,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
                 line.country === country &&
                 line.slug === slug &&
                 line.variantId === variantId
-                  ? { ...line, quantity: Math.min(99, quantity) }
+                  ? { ...line, quantity: Math.min(variant.stock, quantity) }
                   : line,
               ),
         );

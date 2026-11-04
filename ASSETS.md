@@ -10,3 +10,12 @@ Estas imágenes se generaron con la herramienta integrada de generación de imá
 | `public/images/foie-gras-piloto.png` | Foie gras, solo Chile | Fotografía editorial fotorrealista de una terrina de foie gras sin marca sobre cerámica oscura, guarnición mínima y luz suave; sin texto, marcas ni personas. |
 
 Todas se generaron como recursos de prueba. Antes de publicar la tienda definitiva deben sustituirse por imágenes aprobadas de los productos reales. El logo no fue generado con IA.
+
+## Recursos de la versión experimental
+
+Se reutilizan las cuatro fotografías generadas anteriores. No se han añadido fotografías de terceros ni afirmaciones de procedencia de producto. El pie de página informa de su condición de imágenes generadas de muestra.
+
+- `logo-dark-official.png`: recorte de la aplicación autorizada sobre azul noche, página 8 del manual, renderizada a 1000 px de ancho; caja (532,175)-(968,535).
+- `logo-light-official.png`: recorte de la aplicación horizontal, página 9 del manual; caja (495,192)-(872,317) sobre el recurso original existente.
+- Los originales del logotipo no se redibujaron ni se generaron con IA. Todos los PNG incluyen metadatos de origen.
+- Fuentes locales: Bebas Neue y Montserrat, descargadas del servicio oficial Google Fonts; licencias originales en `public/fonts/OFL-*.txt`.

@@ -1,7 +1,14 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Country, Product, formatPrice, markets } from "@/data/markets";
+import { Icon } from "@/components/icon";
+import {
+  Country,
+  Product,
+  formatPrice,
+  markets,
+  categoryNames,
+} from "@/data/markets";
 import { useCart } from "@/features/cart/cart-context";
 
 export function ProductClient({
@@ -14,18 +21,23 @@ export function ProductClient({
   const [selected, setSelected] = useState(product.variants[0].id);
   const [quantity, setQuantity] = useState(1);
   const [notice, setNotice] = useState(false);
-  const { add } = useCart();
+  const { add, forCountry } = useCart();
   const variant = product.variants.find((v) => v.id === selected)!;
+  const inBag = forCountry(country)
+    .filter((line) => line.slug === product.slug && line.variantId === selected)
+    .reduce((n, line) => n + line.quantity, 0);
+  const available = Math.max(0, variant.stock - inBag);
   const related = markets[country].products
     .filter((p) => p.slug !== product.slug)
     .slice(0, 2);
   function addItem() {
-    add(country, product.slug, selected, quantity);
+    if (available === 0) return;
+    add(country, product.slug, selected, Math.min(quantity, available));
     setNotice(true);
     window.setTimeout(() => setNotice(false), 3200);
   }
   return (
-    <main className="detail-page">
+    <main id="main-content" className="detail-page">
       <div className="detail-breadcrumb">
         <Link href={`/${country}`}>{markets[country].name}</Link>
         <span>/</span>
@@ -47,13 +59,12 @@ export function ProductClient({
           </div>
         </div>
         <div className="detail-content">
-          <p className="eyebrow gold">{product.eyebrow}</p>
-          <h1>{product.name}</h1>
+          <h1>{categoryNames[product.category]}</h1>
           <p className="detail-lead">{product.short}</p>
           <span className="detail-divider" />
           <p className="detail-description">{product.description}</p>
           <div className="variant-heading">
-            <span>ELIGE TU PRESENTACIÓN</span>
+            <span>Elige tu presentación</span>
             <small>Peso fijo · precio por presentación</small>
           </div>
           <div
@@ -84,7 +95,7 @@ export function ProductClient({
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
                 aria-label="Disminuir cantidad"
               >
-                −
+                <Icon name="minus" />
               </button>
               <span>{quantity}</span>
               <button
@@ -94,7 +105,7 @@ export function ProductClient({
                 }
                 aria-label="Aumentar cantidad"
               >
-                +
+                <Icon name="plus" />
               </button>
             </div>
             <strong className="detail-price">
@@ -105,13 +116,17 @@ export function ProductClient({
             className="filled-action detail-add"
             type="button"
             onClick={addItem}
+            disabled={available === 0}
           >
-            AGREGAR AL CARRITO <span>↗</span>
+            {available === 0 ? "Stock demo agotado" : "Añadir a mi selección"}{" "}
+            <span>
+              <Icon />
+            </span>
           </button>
           {notice && (
             <p className="added-notice" role="status">
               Agregado al carrito de prueba.{" "}
-              <Link href={`/${country}/carrito`}>Ver carrito →</Link>
+              <Link href={`/${country}/carrito`}>Ver carrito <Icon /></Link>
             </p>
           )}
           <p className="disclaimer">
@@ -121,10 +136,7 @@ export function ProductClient({
         </div>
       </section>
       <section className="related section-pad">
-        <p className="eyebrow">SIGUE EXPLORANDO</p>
-        <h2>
-          TAMBIÉN PODRÍA <em>INSPIRARTE.</em>
-        </h2>
+        <h2>Completa tu mesa</h2>
         <div className="related-grid">
           {related.map((p) => (
             <Link key={p.slug} href={`/${country}/producto/${p.slug}`}>
@@ -132,7 +144,9 @@ export function ProductClient({
               <div>
                 <span>{p.category.toUpperCase()}</span>
                 <strong>{p.name}</strong>
-                <b>↗</b>
+                <b>
+                  <Icon />
+                </b>
               </div>
             </Link>
           ))}

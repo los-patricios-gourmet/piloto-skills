@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T04:32:28.360845+00:00",
+  "title": "Design System: Los Patricios Gourmet",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "Navy",
+        "tonalRamp": [
+          "oklch(15% 0.0128 237.34)",
+          "oklch(26% 0.0283 237.34)",
+          "oklch(37% 0.0411 237.34)",
+          "oklch(49% 0.0514 237.34)",
+          "oklch(61% 0.0514 237.34)",
+          "oklch(73% 0.0411 237.34)",
+          "oklch(85% 0.0231 237.34)",
+          "oklch(95% 0.0062 237.34)"
+        ]
+      },
+      "navy-deep": {
+        "role": "primary",
+        "displayName": "Navy Deep",
+        "tonalRamp": [
+          "oklch(15% 0.0084 235.19)",
+          "oklch(26% 0.0185 235.19)",
+          "oklch(37% 0.0269 235.19)",
+          "oklch(49% 0.0336 235.19)",
+          "oklch(61% 0.0336 235.19)",
+          "oklch(73% 0.0269 235.19)",
+          "oklch(85% 0.0151 235.19)",
+          "oklch(95% 0.0040 235.19)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Gold",
+        "tonalRamp": [
+          "oklch(15% 0.0314 80.02)",
+          "oklch(26% 0.0691 80.02)",
+          "oklch(37% 0.1005 80.02)",
+          "oklch(49% 0.1256 80.02)",
+          "oklch(61% 0.1256 80.02)",
+          "oklch(73% 0.1005 80.02)",
+          "oklch(85% 0.0565 80.02)",
+          "oklch(95% 0.0151 80.02)"
+        ]
+      },
+      "gold-hover": {
+        "role": "primary",
+        "displayName": "Gold Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0235 80.80)",
+          "oklch(26% 0.0516 80.80)",
+          "oklch(37% 0.0750 80.80)",
+          "oklch(49% 0.0938 80.80)",
+          "oklch(61% 0.0938 80.80)",
+          "oklch(73% 0.0750 80.80)",
+          "oklch(85% 0.0422 80.80)",
+          "oklch(95% 0.0113 80.80)"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "tonalRamp": [
+          "oklch(15% 0.0007 128.49)",
+          "oklch(26% 0.0016 128.49)",
+          "oklch(37% 0.0023 128.49)",
+          "oklch(49% 0.0028 128.49)",
+          "oklch(61% 0.0028 128.49)",
+          "oklch(73% 0.0023 128.49)",
+          "oklch(85% 0.0013 128.49)",
+          "oklch(95% 0.0003 128.49)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(37% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(73% 0.0000 89.88)",
+          "oklch(85% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0059 234.31)",
+          "oklch(26% 0.0129 234.31)",
+          "oklch(37% 0.0188 234.31)",
+          "oklch(49% 0.0234 234.31)",
+          "oklch(61% 0.0234 234.31)",
+          "oklch(73% 0.0188 234.31)",
+          "oklch(85% 0.0106 234.31)",
+          "oklch(95% 0.0028 234.31)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.0014 211.04)",
+          "oklch(26% 0.0031 211.04)",
+          "oklch(37% 0.0045 211.04)",
+          "oklch(49% 0.0056 211.04)",
+          "oklch(61% 0.0056 211.04)",
+          "oklch(73% 0.0045 211.04)",
+          "oklch(85% 0.0025 211.04)",
+          "oklch(95% 0.0007 211.04)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0013 165.00)",
+          "oklch(26% 0.0028 165.00)",
+          "oklch(37% 0.0040 165.00)",
+          "oklch(49% 0.0050 165.00)",
+          "oklch(61% 0.0050 165.00)",
+          "oklch(73% 0.0040 165.00)",
+          "oklch(85% 0.0023 165.00)",
+          "oklch(95% 0.0006 165.00)"
+        ]
+      },
+      "light-copy": {
+        "role": "neutral",
+        "displayName": "Light Copy",
+        "tonalRamp": [
+          "oklch(15% 0.0023 214.34)",
+          "oklch(26% 0.0050 214.34)",
+          "oklch(37% 0.0073 214.34)",
+          "oklch(49% 0.0091 214.34)",
+          "oklch(61% 0.0091 214.34)",
+          "oklch(73% 0.0073 214.34)",
+          "oklch(85% 0.0041 214.34)",
+          "oklch(95% 0.0011 214.34)"
+        ]
+      },
+      "field-border": {
+        "role": "neutral",
+        "displayName": "Field Border",
+        "tonalRamp": [
+          "oklch(15% 0.0042 227.04)",
+          "oklch(26% 0.0093 227.04)",
+          "oklch(37% 0.0135 227.04)",
+          "oklch(49% 0.0169 227.04)",
+          "oklch(61% 0.0169 227.04)",
+          "oklch(73% 0.0135 227.04)",
+          "oklch(85% 0.0076 227.04)",
+          "oklch(95% 0.0020 227.04)"
+        ]
+      },
+      "admin-ink": {
+        "role": "neutral",
+        "displayName": "Admin Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0028 237.03)",
+          "oklch(26% 0.0062 237.03)",
+          "oklch(37% 0.0090 237.03)",
+          "oklch(49% 0.0112 237.03)",
+          "oklch(61% 0.0112 237.03)",
+          "oklch(73% 0.0090 237.03)",
+          "oklch(85% 0.0051 237.03)",
+          "oklch(95% 0.0013 237.03)"
+        ]
+      },
+      "admin-muted": {
+        "role": "neutral",
+        "displayName": "Admin Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0035 240.14)",
+          "oklch(26% 0.0076 240.14)",
+          "oklch(37% 0.0111 240.14)",
+          "oklch(49% 0.0139 240.14)",
+          "oklch(61% 0.0139 240.14)",
+          "oklch(73% 0.0111 240.14)",
+          "oklch(85% 0.0062 240.14)",
+          "oklch(95% 0.0017 240.14)"
+        ]
+      },
+      "admin-surface": {
+        "role": "neutral",
+        "displayName": "Admin Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0005 197.12)",
+          "oklch(26% 0.0012 197.12)",
+          "oklch(37% 0.0017 197.12)",
+          "oklch(49% 0.0021 197.12)",
+          "oklch(61% 0.0021 197.12)",
+          "oklch(73% 0.0017 197.12)",
+          "oklch(85% 0.0010 197.12)",
+          "oklch(95% 0.0003 197.12)"
+        ]
+      },
+      "admin-ground": {
+        "role": "neutral",
+        "displayName": "Admin Ground",
+        "tonalRamp": [
+          "oklch(15% 0.0004 145.56)",
+          "oklch(26% 0.0009 145.56)",
+          "oklch(37% 0.0013 145.56)",
+          "oklch(49% 0.0017 145.56)",
+          "oklch(61% 0.0017 145.56)",
+          "oklch(73% 0.0013 145.56)",
+          "oklch(85% 0.0008 145.56)",
+          "oklch(95% 0.0002 145.56)"
+        ]
+      },
+      "admin-sidebar": {
+        "role": "neutral",
+        "displayName": "Admin Sidebar",
+        "tonalRamp": [
+          "oklch(15% 0.0006 165.07)",
+          "oklch(26% 0.0014 165.07)",
+          "oklch(37% 0.0020 165.07)",
+          "oklch(49% 0.0025 165.07)",
+          "oklch(61% 0.0025 165.07)",
+          "oklch(73% 0.0020 165.07)",
+          "oklch(85% 0.0011 165.07)",
+          "oklch(95% 0.0003 165.07)"
+        ]
+      },
+      "admin-selected": {
+        "role": "neutral",
+        "displayName": "Admin Selected",
+        "tonalRamp": [
+          "oklch(15% 0.0013 165.00)",
+          "oklch(26% 0.0028 165.00)",
+          "oklch(37% 0.0040 165.00)",
+          "oklch(49% 0.0051 165.00)",
+          "oklch(61% 0.0051 165.00)",
+          "oklch(73% 0.0040 165.00)",
+          "oklch(85% 0.0023 165.00)",
+          "oklch(95% 0.0006 165.00)"
+        ]
+      },
+      "stock-low": {
+        "role": "secondary",
+        "displayName": "Stock Low",
+        "tonalRamp": [
+          "oklch(15% 0.0271 54.18)",
+          "oklch(26% 0.0596 54.18)",
+          "oklch(37% 0.0867 54.18)",
+          "oklch(49% 0.1084 54.18)",
+          "oklch(61% 0.1084 54.18)",
+          "oklch(73% 0.0867 54.18)",
+          "oklch(85% 0.0488 54.18)",
+          "oklch(95% 0.0130 54.18)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "ingredient": {
+        "displayName": "Ingredient",
+        "purpose": "Selected ingredient; responsive overrides in DESIGN.md."
+      },
+      "introduction": {
+        "displayName": "Introduction",
+        "purpose": "Vitrine introduction heading."
+      },
+      "chapter": {
+        "displayName": "Chapter",
+        "purpose": "Collection chapter heading."
+      },
+      "product-title": {
+        "displayName": "Product Title",
+        "purpose": "Catalog product heading."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Readable body copy and form text."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Purchase and text actions."
+      },
+      "admin-heading": {
+        "displayName": "Admin Heading",
+        "purpose": "Compact working-screen heading."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Expressive easing."
+      },
+      {
+        "name": "press",
+        "value": "140ms",
+        "purpose": "Shared button transform."
+      },
+      {
+        "name": "purchase-press",
+        "value": "150ms",
+        "purpose": "Purchase-action transform override."
+      },
+      {
+        "name": "hover-background",
+        "value": "180ms",
+        "purpose": "Background-color hover."
+      },
+      {
+        "name": "ingredient-change",
+        "value": "280ms",
+        "purpose": "Pointer-only ingredient change."
+      },
+      {
+        "name": "photo-opacity",
+        "value": "220ms",
+        "purpose": "Photograph crossfade."
+      },
+      {
+        "name": "entrance-rise",
+        "value": "400ms",
+        "purpose": "Selective rise."
+      },
+      {
+        "name": "entrance-settle",
+        "value": "700ms",
+        "purpose": "Selective settle."
+      },
+      {
+        "name": "photo-drift",
+        "value": "18s",
+        "purpose": "Alternating photo drift; reduced motion disables it."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-phone",
+        "value": "365px"
+      },
+      {
+        "name": "phone",
+        "value": "760px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      },
+      {
+        "name": "wide",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Purchase action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Gold purchase action.",
+      "html": "<button class=\"ds-purchase\">Añadir a mi selección<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></button>",
+      "css": ".ds-purchase{font-family:var(--text,\"Montserrat\",sans-serif);display:inline-flex;align-items:center;justify-content:space-between;gap:25px;min-height:52px;padding:15px 22px;border:0;border-radius:0;background:var(--gold,#efbb5e);color:var(--navy,#103144);font-size:14px;font-weight:600;line-height:1.6;cursor:pointer;transition:transform 150ms cubic-bezier(.23,1,.32,1),background-color 180ms ease}.ds-purchase svg{width:22px;height:22px}.ds-purchase:hover{background:#f5cf8d}.ds-purchase:focus-visible{outline:3px solid var(--gold,#efbb5e);outline-offset:5px;}.ds-purchase:active{transform:scale(.975)}.ds-purchase:disabled{opacity:.55;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-purchase{transition:none}}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Plain collection link.",
+      "html": "<a class=\"ds-text\" href=\"#collection\">Ver catálogo<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></a>",
+      "css": ".ds-text{font-family:var(--text,\"Montserrat\",sans-serif);display:inline-flex;align-items:center;gap:35px;min-height:44px;color:var(--navy,#103144);font-size:14px;font-weight:600;text-decoration:none;text-underline-offset:5px}.ds-text svg{width:22px;height:22px}.ds-text:hover{text-decoration:underline}.ds-text:focus-visible{outline:3px solid var(--gold,#efbb5e);outline-offset:5px;}"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Catalog search with visible label.",
+      "html": "<label class=\"ds-search\">Buscar ingrediente<input type=\"search\" placeholder=\"Buscar en la colección\"/></label>",
+      "css": ".ds-search{font-family:var(--text,\"Montserrat\",sans-serif);display:flex;align-items:center;gap:12px;font-size:13px;color:var(--navy,#103144)}.ds-search input{font-family:var(--text,\"Montserrat\",sans-serif);width:270px;max-width:100%;min-height:48px;padding:12px 16px;font-size:14px;border:0;border-radius:0;background:var(--white,#fff);color:var(--navy,#103144)}.ds-search input:focus-visible{outline:3px solid var(--gold,#efbb5e);outline-offset:5px;}"
+    },
+    {
+      "name": "Checkout field",
+      "kind": "input",
+      "refersTo": "input-checkout",
+      "description": "Readable checkout field.",
+      "html": "<label class=\"ds-field\">Nombre<input type=\"text\" autocomplete=\"given-name\" placeholder=\"Tu nombre\"/></label>",
+      "css": ".ds-field{font-family:var(--text,\"Montserrat\",sans-serif);display:flex;flex-direction:column;gap:8px;color:var(--navy,#103144);font-size:14px}.ds-field input{font-family:var(--text,\"Montserrat\",sans-serif);min-height:52px;padding:14px 16px;border:1px solid #a9b6bc;border-radius:0;background:var(--white,#fff);color:var(--navy,#103144);font-size:16px}.ds-field input::placeholder{color:#626c72}.ds-field input:focus-visible{outline:3px solid var(--gold,#efbb5e);outline-offset:5px;}"
+    },
+    {
+      "name": "Catalog filter",
+      "kind": "chip",
+      "refersTo": "filter",
+      "description": "Square catalog filter with selected state.",
+      "html": "<div class=\"ds-filters\"><button aria-pressed=\"true\">Todos</button><button aria-pressed=\"false\">Caviar</button></div>",
+      "css": ".ds-filters{display:flex;gap:8px;flex-wrap:wrap}.ds-filters button{font-family:var(--text,\"Montserrat\",sans-serif);min-height:44px;padding:12px 18px;border:0;border-radius:0;background:var(--surface,#e9edeb);color:var(--navy,#103144);font-size:14px;cursor:pointer;transition:transform 140ms cubic-bezier(.23,1,.32,1)}.ds-filters button[aria-pressed=true]{background:var(--navy,#103144);color:var(--white,#fff)}.ds-filters button:focus-visible{outline:3px solid var(--gold,#efbb5e);outline-offset:5px;}.ds-filters button:active{transform:scale(.975)}@media(prefers-reduced-motion:reduce){.ds-filters button{transition:none}}"
+    },
+    {
+      "name": "Fixed-weight variant",
+      "kind": "button",
+      "refersTo": "variant",
+      "description": "Stacked weight and availability.",
+      "html": "<button class=\"ds-variant\" aria-pressed=\"true\"><strong>30 g</strong><span>Stock de muestra</span></button>",
+      "css": ".ds-variant{font-family:var(--text,\"Montserrat\",sans-serif);display:flex;flex-direction:column;gap:8px;padding:16px 12px;border:0;border-radius:0;text-align:left;font-size:14px;background:var(--surface,#e9edeb);color:var(--navy,#103144);cursor:pointer;transition:transform 140ms cubic-bezier(.23,1,.32,1)}.ds-variant[aria-pressed=true]{background:var(--navy,#103144);color:var(--white,#fff)}.ds-variant strong{font-weight:500}.ds-variant span{font-size:13px}.ds-variant:focus-visible{outline:3px solid var(--gold,#efbb5e);outline-offset:5px;}.ds-variant:active{transform:scale(.975)}@media(prefers-reduced-motion:reduce){.ds-variant{transition:none}}"
+    },
+    {
+      "name": "Store navigation",
+      "kind": "nav",
+      "refersTo": "button-text",
+      "description": "Current-page gold on night blue.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Principal\"><a href=\"#home\" aria-current=\"page\">Inicio</a><a href=\"#collection\">Colección</a><a href=\"#essence\">La esencia</a></nav>",
+      "css": ".ds-nav{font-family:var(--text,\"Montserrat\",sans-serif);display:flex;gap:40px;flex-wrap:wrap;background:var(--navy,#103144);color:var(--white,#fff);padding:16px 22px}.ds-nav a{display:flex;align-items:center;min-height:44px;font-size:14px;color:inherit;text-decoration:none}.ds-nav a[aria-current],.ds-nav a:hover{color:var(--gold,#efbb5e)}.ds-nav a:focus-visible{outline:3px solid var(--gold,#efbb5e);outline-offset:5px;}"
+    },
+    {
+      "name": "Administration panel",
+      "kind": "card",
+      "refersTo": "admin-panel",
+      "description": "Compact working panel.",
+      "html": "<section class=\"ds-panel\"><div class=\"ds-panel-head\"><h2>Productos de muestra</h2><button>Ver todos<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"/></svg></button></div><p>Presentaciones, precios y stock de demostración.</p></section>",
+      "css": ".ds-panel{font-family:var(--text,\"Montserrat\",sans-serif);padding:24px;background:var(--white,#fff);color:#252b2f;border-radius:0}.ds-panel-head{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:15px}.ds-panel h2{margin:0;font-size:16px;font-weight:500;line-height:1.4}.ds-panel button{font-family:var(--text,\"Montserrat\",sans-serif);display:inline-flex;align-items:center;gap:8px;border:0;background:none;color:inherit;min-height:32px;padding:0;font-size:12px;text-decoration:underline;cursor:pointer}.ds-panel svg{width:16px;height:16px}.ds-panel p{margin:0;font-size:14px;line-height:1.6;color:#596167}.ds-panel button:focus-visible{outline:3px solid var(--gold,#efbb5e);outline-offset:5px;}.ds-panel button:active{transform:scale(.975)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Photographic Vitrine",
+    "overview": "The photographic vitrine gives exceptional ingredients a large, direct presence while keeping selection and purchase within reach. Night blue, gold and the official logo carry Los Patricios Gourmet’s existing identity; white and cool off-white chapters create breathing room around the photography.\n\nThe storefront is spacious and editorial. Administration uses a separate compact working grammar: neutral surfaces, Montserrat headings, aligned numbers and practical list separators. Both retain square surfaces and explicit focus states.",
+    "keyCharacteristics": [
+      "Official identity preserved through supplied logo assets and brand typefaces.",
+      "Large ingredient photography with clear, operable selection.",
+      "Square, flat surfaces differentiated by tone.",
+      "Quiet content with selective motion and keyboard-aware suppression.",
+      "A compact neutral administration grammar."
+    ],
+    "rules": [
+      {
+        "name": "The Brand Asset Rule",
+        "body": "Use the supplied official logo crops; preserve their artwork and proportions.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ingredient Scale Rule",
+        "body": "Size display type for its role and available width; the ingredient name is intentionally larger than the introductory heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Separate surfaces through background tone, space and photographic cropping; do not introduce card shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve official logo artwork and use the self-hosted brand fonts.",
+      "Do show presentation, price and selection state beside the purchase action.",
+      "Do keep body copy readable and keyboard focus visible.",
+      "Do suppress animated travel for reduced motion and keyboard interaction.",
+      "Do keep generated photographs and sample commerce data identified as part of the pilot.",
+      "Do use the compact neutral grammar for administration."
+    ],
+    "donts": [
+      "Don't redraw the official logo or replace its wordmark with typed text.",
+      "Don't cover headings with imagery or decorative type overlap.",
+      "Don't add decorative gradients, rounded card styling or shadow elevation to the flat storefront.",
+      "Don't add section kickers or decorative glyph icons; use the coherent inline SVG set.",
+      "Don't imply real payments, confirmed delivery coverage or verified product provenance in the pilot."
+    ]
+  }
+}

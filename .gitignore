@@ -5,3 +5,10 @@ out/
 *.log
 .openai/
 .idea/
+.taste-skill/before/
+.taste-skill/after/
+.taste-skill/chile/
+.taste-skill/admin/
+.impeccable/review/
+.impeccable/baseline/
+.impeccable/questions/

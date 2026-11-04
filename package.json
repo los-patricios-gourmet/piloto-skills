@@ -1,11 +1,12 @@
 {
   "name": "los-patricios-gourmet-piloto",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "preview": "node scripts/preview.mjs"
   },
   "dependencies": {
     "motion": "^12.23.0",

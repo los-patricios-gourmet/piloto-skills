@@ -1,6 +1,7 @@
 "use client";
 import { FormEvent, useState } from "react";
 import Link from "next/link";
+import { Icon } from "@/components/icon";
 import { Country, formatPrice, getProduct, markets } from "@/data/markets";
 import { useCart } from "@/features/cart/cart-context";
 
@@ -37,10 +38,9 @@ export function CheckoutClient({ country }: { country: Country }) {
   }
   if (stage === 3)
     return (
-      <main className="checkout-page section-pad">
+      <main id="main-content" className="checkout-page section-pad">
         <div className="checkout-success">
-          <span>✦</span>
-          <p className="eyebrow gold">SIMULACIÓN COMPLETADA</p>
+          <span></span>
           <h1>
             GRACIAS POR
             <br />
@@ -52,20 +52,15 @@ export function CheckoutClient({ country }: { country: Country }) {
             enviaron ni guardaron.
           </p>
           <Link className="filled-action" href={`/${country}`}>
-            VOLVER A LA TIENDA ↗
+            VOLVER A LA TIENDA <Icon />
           </Link>
         </div>
       </main>
     );
   return (
-    <main className="checkout-page section-pad">
+    <main id="main-content" className="checkout-page section-pad">
       <div className="page-heading">
-        <p className="eyebrow gold">
-          CHECKOUT VISUAL / {markets[country].name.toUpperCase()}
-        </p>
-        <h1>
-          UN ÚLTIMO <em>PASO.</em>
-        </h1>
+        <h1>Tu compra de prueba</h1>
         <p>
           Recorre una compra de demostración. No se enviarán datos, pedidos ni
           pagos.
@@ -75,7 +70,7 @@ export function CheckoutClient({ country }: { country: Country }) {
         <div className="empty-cart">
           <h2>TU CARRITO ESTÁ VACÍO.</h2>
           <Link href={`/${country}/catalogo`} className="filled-action">
-            EXPLORAR LA COLECCIÓN ↗
+            EXPLORAR LA COLECCIÓN <Icon />
           </Link>
         </div>
       ) : (
@@ -83,19 +78,18 @@ export function CheckoutClient({ country }: { country: Country }) {
           <section className="checkout-form-panel">
             <div className="checkout-steps">
               <span className={stage === 0 ? "active" : ""}>
-                01 <b>DATOS</b>
+                <b>Datos</b>
               </span>
               <span className={stage === 1 ? "active" : ""}>
-                02 <b>ENTREGA</b>
+                <b>Entrega</b>
               </span>
               <span className={stage === 2 ? "active" : ""}>
-                03 <b>RESUMEN</b>
+                <b>Resumen</b>
               </span>
             </div>
             <form onSubmit={next}>
               {stage === 0 && (
                 <div className="checkout-stage">
-                  <p className="eyebrow">TUS DATOS</p>
                   <h2>¿A QUIÉN ENTREGAMOS?</h2>
                   <div className="form-grid">
                     <label>
@@ -145,7 +139,6 @@ export function CheckoutClient({ country }: { country: Country }) {
               )}
               {stage === 1 && (
                 <div className="checkout-stage">
-                  <p className="eyebrow">DELIVERY A DOMICILIO</p>
                   <h2>¿DÓNDE ENTREGAMOS?</h2>
                   <div className="form-grid">
                     <label>
@@ -190,8 +183,7 @@ export function CheckoutClient({ country }: { country: Country }) {
               )}
               {stage === 2 && (
                 <div className="checkout-stage">
-                  <p className="eyebrow">REVISA TU SELECCIÓN</p>
-                  <h2>TODO LISTO PARA LA DEMO.</h2>
+                  <h2>Revisa tu selección</h2>
                   <div className="review-line">
                     <span>Cliente</span>
                     <strong>{form.name}</strong>
@@ -228,18 +220,19 @@ export function CheckoutClient({ country }: { country: Country }) {
                     className="back-action"
                     onClick={() => setStage((stage - 1) as Stage)}
                   >
-                    ← VOLVER
+                    <Icon className="icon-back" /> VOLVER
                   </button>
                 )}
                 <button type="submit" className="filled-action">
                   {stage === 2 ? "FINALIZAR SIMULACIÓN" : "CONTINUAR"}{" "}
-                  <span>↗</span>
+                  <span>
+                    <Icon />
+                  </span>
                 </button>
               </div>
             </form>
           </section>
           <aside className="checkout-order">
-            <p className="eyebrow gold">TU SELECCIÓN</p>
             <h2>RESUMEN</h2>
             {rows.map(({ line, product, variant }) => (
               <div

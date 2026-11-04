@@ -14,7 +14,11 @@ export function BrandLogo({
       aria-label="Los Patricios Gourmet, ir al inicio"
     >
       <img
-        src="/brand/logo-horizontal-manual.png"
+        src={
+          light
+            ? "/brand/logo-dark-official.png"
+            : "/brand/logo-light-official.png"
+        }
         alt="Los Patricios Gourmet"
       />
     </Link>

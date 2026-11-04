@@ -1,15 +1,17 @@
 "use client";
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { Icon } from "@/components/icon";
+import { BrandLogo } from "@/components/brand-logo";
 import { Country, formatPrice, markets } from "@/data/markets";
 
 type Tab = "resumen" | "productos" | "inventario" | "pedidos" | "delivery";
-const tabs: { id: Tab; label: string; icon: string }[] = [
-  { id: "resumen", label: "Resumen", icon: "◫" },
-  { id: "productos", label: "Productos", icon: "◇" },
-  { id: "inventario", label: "Inventario", icon: "▤" },
-  { id: "pedidos", label: "Pedidos", icon: "▣" },
-  { id: "delivery", label: "Delivery", icon: "↗" },
+const tabs: { id: Tab; label: string }[] = [
+  { id: "resumen", label: "Resumen" },
+  { id: "productos", label: "Productos" },
+  { id: "inventario", label: "Inventario" },
+  { id: "pedidos", label: "Pedidos" },
+  { id: "delivery", label: "Delivery" },
 ];
 const sampleOrders = [
   {
@@ -59,20 +61,17 @@ export function AdminClient() {
     <div className="admin-shell">
       <aside className="admin-sidebar">
         <div className="admin-brand">
-          <span className="admin-brand-mark">✦</span>
-          <div>
-            LOS PATRICIOS<small>GESTIÓN · PILOTO</small>
-          </div>
+          <BrandLogo />
         </div>
         <nav aria-label="Administración de prueba">
           {tabs.map((item) => (
             <button
               type="button"
               key={item.id}
+              aria-pressed={tab === item.id}
               className={tab === item.id ? "active" : ""}
               onClick={() => setTab(item.id)}
             >
-              <span>{item.icon}</span>
               {item.label}
             </button>
           ))}
@@ -80,19 +79,22 @@ export function AdminClient() {
         <div className="admin-sidebar-bottom">
           <p>VISTA DEMOSTRATIVA</p>
           <span>Los cambios no se guardan ni afectan la tienda.</span>
-          <Link href="/">← Volver a la tienda</Link>
+          <Link href="/">
+            <Icon className="icon-back" /> Volver a la tienda
+          </Link>
         </div>
       </aside>
-      <main className="admin-main">
+      <main id="main-content" className="admin-main">
         <div className="admin-topline">
           <span>PILOTO ADMINISTRATIVO · DATOS FICTICIOS</span>
-          <Link href="/">VER STOREFRONT ↗</Link>
+          <Link href="/">
+            VER STOREFRONT <Icon />
+          </Link>
         </div>
         <div className="admin-heading">
           <div>
-            <p className="eyebrow gold">PANEL DE GESTIÓN / DEMO</p>
             <h1>
-              {tabs.find((t) => t.id === tab)?.label.toUpperCase()}
+              {tabs.find((t) => t.id === tab)?.label}
               <span>.</span>
             </h1>
             <p>
@@ -116,27 +118,27 @@ export function AdminClient() {
           <>
             <div className="admin-metrics">
               <div>
-                <span>PRODUCTOS EN {markets[country].name.toUpperCase()}</span>
-                <strong>{products.length.toString().padStart(2, "0")}</strong>
+                <span>Productos en {markets[country].name.toUpperCase()}</span>
+                <strong>{products.length}</strong>
                 <small>Catálogo de demostración</small>
               </div>
               <div>
-                <span>PRESENTACIONES</span>
-                <strong>{variants.length.toString().padStart(2, "0")}</strong>
+                <span>Presentaciones</span>
+                <strong>{variants.length}</strong>
                 <small>Con stock independiente</small>
               </div>
               <div>
-                <span>STOCK BAJO</span>
-                <strong>{low.toString().padStart(2, "0")}</strong>
+                <span>Stock bajo</span>
+                <strong>{low}</strong>
                 <small>Hasta 4 unidades · datos demo</small>
               </div>
             </div>
             <div className="admin-panels">
               <section>
                 <div className="admin-panel-head">
-                  <h2>PRODUCTOS DESTACADOS</h2>
+                  <h2>Productos destacados</h2>
                   <button type="button" onClick={() => setTab("productos")}>
-                    VER TODOS ↗
+                    VER TODOS <Icon />
                   </button>
                 </div>
                 {products.slice(0, 3).map((p) => (
@@ -152,9 +154,9 @@ export function AdminClient() {
               </section>
               <section>
                 <div className="admin-panel-head">
-                  <h2>ACTIVIDAD DE MUESTRA</h2>
+                  <h2>Actividad de muestra</h2>
                   <button type="button" onClick={() => setTab("pedidos")}>
-                    VER PEDIDOS ↗
+                    VER PEDIDOS <Icon />
                   </button>
                 </div>
                 {sampleOrders.map((o) => (
@@ -187,7 +189,7 @@ export function AdminClient() {
                   <tr>
                     <th>PRODUCTO</th>
                     <th>CATEGORÍA</th>
-                    <th>PRESENTACIONES</th>
+                    <th>Presentaciones</th>
                     <th>DESDE</th>
                     <th>ESTADO</th>
                   </tr>
@@ -260,7 +262,7 @@ export function AdminClient() {
                             }
                             aria-label={`Restar stock de ${p.name} ${v.weight}`}
                           >
-                            −
+                            <Icon name="minus" />
                           </button>
                           <button
                             type="button"
@@ -272,7 +274,7 @@ export function AdminClient() {
                             }
                             aria-label={`Agregar stock de ${p.name} ${v.weight}`}
                           >
-                            +
+                            <Icon name="plus" />
                           </button>
                         </div>
                       </td>
@@ -337,8 +339,7 @@ export function AdminClient() {
         {tab === "delivery" && (
           <div className="admin-delivery">
             <section>
-              <p className="eyebrow gold">MODALIDAD CONFIRMADA</p>
-              <h2>SOLO ENTREGA A DOMICILIO.</h2>
+              <h2>Solo entrega a domicilio</h2>
               <p>
                 La futura administración podrá configurar zonas de cobertura,
                 tarifas y disponibilidad por mercado. No habrá recojo en tienda
@@ -346,7 +347,6 @@ export function AdminClient() {
               </p>
             </section>
             <section>
-              <p className="eyebrow gold">PENDIENTE DE DEFINICIÓN</p>
               <ul>
                 <li>Ciudades, distritos y comunas con cobertura.</li>
                 <li>Tarifas y compra mínima, si aplica.</li>
